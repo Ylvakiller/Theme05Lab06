@@ -1,4 +1,4 @@
-package lab6;
+package lab6Elections;
 
 public class VoteRecorder {
 
