@@ -165,6 +165,23 @@ public class VoteRecorder {
 		}
 	}
 	
+	/**
+	 * Only works if the amount of votes for the president is equal to 0
+	 * This in order to prevent fraud during the election
+	 * @param candidate1 Name that you want to set the first candidate of vice president to
+	 * @param candidate2 Name that you want to set the second candidate of vice president to
+	 * @return true if succesful, false if the amount of votes was not equal to 0
+	 */
+	public static boolean setCandidatesVicePresident(String candidate1, String candidate2){
+		if(votesCandidatePresident1==0&&votesCandidatePresident2==0){
+			return false;
+		}else{
+			nameCandidateVicePresident1=candidate1;
+			nameCandidateVicePresident2=candidate2;
+			return true;
+		}
+	}
+	
 	
 	
 
