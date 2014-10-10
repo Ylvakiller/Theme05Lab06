@@ -196,10 +196,18 @@ public class VoteRecorder {
 	
 	/**
 	 * Returns a string with a , as delimiter with the votes for both candidates for presidents
-	 * @return string in the format [votespresident1,votespresident2]
+	 * @return string in the format [votesPresident1,votesPresident2]
 	 */
 	public static String getCurrentVotePresident(){
 	return Integer.toString(votesCandidatePresident1) + "," + Integer.toString(votesCandidatePresident2);
+	}
+	
+	/**
+	 * Returns a string with a , as delimiter with the votes for both candidates for Vice Presidents
+	 * @return string in the format [votesVicePresident1,votesVicePresident2]
+	 */
+	public static String getCurrentVoteVicePresident(){
+	return Integer.toString(votesCandidateVicePresident1) + "," + Integer.toString(votesCandidateVicePresident2);
 	}
 	
 	
