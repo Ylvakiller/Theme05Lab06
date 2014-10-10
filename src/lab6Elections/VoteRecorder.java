@@ -69,7 +69,10 @@ public class VoteRecorder {
 	 */
 	private int voteID;
 	
-	
+	/**
+	 * placeholder, will be deleted later
+	 */
+	private boolean confirmed;
 	
 	/**
 	 * Default constructor, sets voteID and increments the amount of voters
@@ -208,6 +211,26 @@ public class VoteRecorder {
 	 */
 	public static String getCurrentVoteVicePresident(){
 	return Integer.toString(votesCandidateVicePresident1) + "," + Integer.toString(votesCandidateVicePresident2);
+	}
+	
+	public void getAndConfirmVotes(){
+		
+	}
+	
+	private static void getAVote(){
+		
+	}
+	
+	private static void getVotes(){
+		
+	}
+	
+	private static void confirmVotes(){
+		
+	}
+	
+	private static void recordVotes(){
+		
 	}
 	
 	
