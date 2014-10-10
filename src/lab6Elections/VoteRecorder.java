@@ -181,6 +181,18 @@ public class VoteRecorder {
 		}
 	}
 	
+	/**
+	 * Resets all the votes to 0,
+	 * Also sets the amount of voters to 0
+	 */
+	public static void resetVotes(){
+		votesCandidatePresident1=0;
+		votesCandidatePresident2=0;
+		votesCandidateVicePresident1=0;
+		votesCandidateVicePresident2=0;
+		voters=0;
+	}
+	
 	
 	
 
