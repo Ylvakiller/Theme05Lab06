@@ -269,8 +269,55 @@ public class VoteRecorder {
 		return Integer.toString(votePresident) + "," + Integer.toString(voteVicePresident);
 	}
 
-	private static void confirmVotes(int president, int vicePresident){
-
+	/**
+	 * Method that checks with the voter if his votes are correct
+	 * @param president 1 for the first candidate, a 2 for the second candidate for president
+	 * @param vicePresident 1 for the first candidate, a 2 for the second candidate for president
+	 * @return true if the vote was confirmed to be true, false if the vote was incorrect
+	 */
+	private static boolean confirmVotes(int president, int vicePresident){
+		boolean confirmed = false;
+		if(president==0){
+			System.out.println("You have entered that you do not care who the president is.");
+		}else{
+			System.out.print("You have entered that you want to have ");
+			if(president==1){
+				System.out.print(nameCandidatePresident1);
+			}else{
+				System.out.print(nameCandidatePresident2);
+			}
+			System.out.println(" as President");
+		}
+		if(vicePresident==0){
+			System.out.println("You have also entered that you do not mind who the vice president is");
+		}else{
+			System.out.print("You have also entered that you want to have ");
+			if(vicePresident==1){
+				System.out.print(nameCandidateVicePresident1);
+			}else{
+				System.out.print(nameCandidateVicePresident2);
+			}
+			System.out.println(" as Vice President.");
+		}
+		System.out.println("If you still agree with these votes please say yes, otherwise say no.");
+		String temp = "";
+		boolean tempB=true;
+		
+		while(tempB){
+			Scanner keyboard = new Scanner(System.in);
+			temp = keyboard.next();
+			if (temp.equalsIgnoreCase("yes")){
+				confirmed = true;
+				tempB=false;
+			}else if(temp.equalsIgnoreCase("no")){
+				confirmed = false;
+				tempB=false;
+			}else{
+				System.out.println("I could not understand what you entered, can you please enter it again?");
+			}
+			keyboard.close();
+		}		
+		return confirmed;
 	}
 
 	private static void recordVotes(){
