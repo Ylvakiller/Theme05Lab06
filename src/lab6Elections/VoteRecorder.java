@@ -6,6 +6,7 @@ package lab6Elections;
  * Allows the votes to be reset. 
  * Can return the standings for the election
  * 
+ * Records the vote for a specific object
  * @author Ylva
  */
 public class VoteRecorder {
@@ -25,6 +26,8 @@ public class VoteRecorder {
 	 * Name of the second Vice President Candidate
 	 */
 	public static String nameCandidateVicePresident2;
+	
+	
 	
 	
 

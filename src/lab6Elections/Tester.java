@@ -37,30 +37,21 @@ package lab6Elections;
  * • getAVote(String name1, String name2)—a private method that returns a vote choice for a single race from an individual (0 for no choice, 1 for the first candidate, and 2 for the second candidate) 
  * • getVotes—a private method that returns a vote choice for president and vice president from an individual 
  * • confirmVotes—a private method that displays a person’s vote for president and vice president, asks whether the voter is happy with these choices, and returns true or false according to a yes-or-no response 
- * • recordVotes—a private method that will add an individual’ svotes to the appropriate static variables
+ * • recordVotes—a private method that will add an individual’s votes to the appropriate static variables
  * 
- * Create a program that will conduct an election. The candidates for president are Annie 
- * Kennedy and Bob Hope. The candidates for vice president are John McCain and Susan 
- * Bush. Use a loop to record the votes of many voters. Create a new VoteRecorder object 
- * for each voter. After all the voters are done, present the results. 
- * In addition, write a test program to test the various menthos for setting the names of 
- * the candidates for president.
+ * Create a program that will conduct an election. 
+ * The candidates for president are Annie Kennedy and Bob Hope. 
+ * The candidates for vice president are John McCain and Susan Bush.
+ * Use a loop to record the votes of many voters. 
+ * Create a new VoteRecorder object for each voter.
+ * After all the voters are done, present the results. 
+ * In addition, write a test program to test the various menthos for setting the names of the candidates for president.
  */
 
 /*
  * My interpretation:
- * There will be one voteRecorder object that will keep track of all the votes for the complete race,
- * There will be multiple voteHolder objects, one for each voter, this holds a vote id number that is also tracked in the votereRorder class which is the number of voters that have already been passed.
- * In order to create a new vote an empty voteHolder will be created and certain methods will be run to get votes for both the president and the vice president.
- * 
- * All the setCandidate methods will be in the voteRecorder class. 
- * The static strings and static integers will be in the voteRecorder class
- * The resetVotes and getCurrentVote methods will be in the voteRecorder class
- * 
- * The recordVotes, confirmVotes, getVotes, getAndConfirmVotes and getAVote methods will be in the voteHolder class
- * In the voteHolder class there will be static variables that hold the voteID and the votes cast
- * 
- * Ones a vote has been cast and confirmed it cannot be changed
+ * There will be one voteRecorder class, this will have the total amount of votes, names of candidates etc as a static
+ * there will be instance variables for what the individual has voted.
  */
 
 
