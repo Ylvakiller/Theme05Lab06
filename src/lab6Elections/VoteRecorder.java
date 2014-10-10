@@ -48,6 +48,12 @@ public class VoteRecorder {
 	private static int votesCandidateVicePresident2;
 	
 	/**
+	 * Holds the amount of total voters, this is used to calculate the next voteID in case a voter does not vote for a president of vice president
+	 * 
+	 */
+	private static int voters;
+	
+	/**
 	 * This is the vote that this specific person has cast for president
 	 * If 0 this means no vote is cast, if 1 or 2 it means that candidate for president
 	 */
@@ -60,9 +66,20 @@ public class VoteRecorder {
 	private int myVoteForVicePresident;
 	
 	/**
-	 * The voteId, can be used to figure out what voter this is, defaults to the total amount of votes cast+1
+	 * The voteID, can be used to figure out what voter this is, defaults to voters +1
 	 */
-	private int voteId;
+	private int voteID;
+	
+	
+	
+	/**
+	 * Default constructor, sets voteID and increments the amount of voters
+	 */
+	public VoteRecorder(){
+		voteID = voters+1;
+		voters++;
+		
+	}
 	
 	
 	
