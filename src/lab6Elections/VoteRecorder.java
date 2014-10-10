@@ -259,11 +259,17 @@ public class VoteRecorder {
 
 	}
 
-	private static void getVotes(){
-
+	/**
+	 * A method to get votes for this person for both the president and the vice president
+	 * @return a string in the format [votePresident,voteVicePresident], where both votes are either 0 or 1 or 2
+	 */
+	private static String getVotes(){
+		int votePresident=getAVote(nameCandidatePresident1,nameCandidatePresident2);
+		int voteVicePresident = getAVote(nameCandidateVicePresident1,nameCandidateVicePresident2);
+		return Integer.toString(votePresident) + "," + Integer.toString(voteVicePresident);
 	}
 
-	private static void confirmVotes(){
+	private static void confirmVotes(int president, int vicePresident){
 
 	}
 
