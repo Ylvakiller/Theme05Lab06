@@ -1,4 +1,7 @@
 package lab6Elections;
+
+import java.util.Scanner;
+
 /**
  * Holds the names for the candidates for both president and vice-president
  * Records the total amount of votes
@@ -26,63 +29,63 @@ public class VoteRecorder {
 	 * Name of the second Vice President Candidate.
 	 */
 	private static String nameCandidateVicePresident2;
-	
+
 	/**
 	 * Total amount of votes that have been cast for the first candidate for president.
 	 */
 	private static int votesCandidatePresident1;
-	
+
 	/**
 	 * Total amount of votes that have been cast for the second candidate for president.
 	 */
 	private static int votesCandidatePresident2;
-	
+
 	/**
 	 * Total amount of votes that have been cast for the first candidate for vice president.
 	 */
 	private static int votesCandidateVicePresident1;
-	
+
 	/**
 	 * Total amount of votes that have been cast for the second candidate for vice president.
 	 */
 	private static int votesCandidateVicePresident2;
-	
+
 	/**
 	 * Holds the amount of total voters, this is used to calculate the next voteID in case a voter does not vote for a president of vice president
 	 */
 	private static int voters;
-	
+
 	/**
 	 * This is the vote that this specific person has cast for president
 	 * If 0 this means no vote is cast, if 1 or 2 it means that candidate for president
 	 */
 	private int myVoteForPresident;
-	
+
 	/**
 	 * This is the vote that this specific person has cast for vice president
 	 * If 0 this means no vote is cast, if 1 or 2 it means that candidate for vice president
 	 */
 	private int myVoteForVicePresident;
-	
+
 	/**
 	 * The voteID, can be used to figure out what voter this is, defaults to voters +1
 	 */
 	private int voteID;
-	
+
 	/**
 	 * placeholder, will be deleted later
 	 */
 	private boolean confirmed;
-	
+
 	/**
 	 * Default constructor, sets voteID and increments the amount of voters
 	 */
 	public VoteRecorder(){
 		voteID = voters+1;
 		voters++;
-		
+
 	}
-	
+
 	/**
 	 * Only works if the amount of votes for the president is equal to 0
 	 * This in order to prevent fraud during the election
@@ -98,9 +101,9 @@ public class VoteRecorder {
 			nameCandidatePresident2=candidate2;
 			return true;
 		}
-		
+
 	}
-	
+
 	/**
 	 * Only works if the amount of votes for the president is equal to 0
 	 * This in order to prevent fraud during the election
@@ -122,7 +125,7 @@ public class VoteRecorder {
 			return true;
 		}
 	}
-	
+
 	/**
 	 * Sets the names of the presidential candidates by combining their first and last name
 	 * Only works if the amount of votes for the president is equal to 0
@@ -142,8 +145,8 @@ public class VoteRecorder {
 			return true;
 		}
 	}
-	
-	
+
+
 	/**
 	 * Only works if the amount of votes for the president is equal to 0
 	 * This in order to prevent fraud during the election
@@ -166,7 +169,7 @@ public class VoteRecorder {
 			return true;
 		}
 	}
-	
+
 	/**
 	 * Only works if the amount of votes for the president is equal to 0
 	 * This in order to prevent fraud during the election
@@ -183,7 +186,7 @@ public class VoteRecorder {
 			return true;
 		}
 	}
-	
+
 	/**
 	 * Resets all the votes to 0,
 	 * Also sets the amount of voters to 0
@@ -195,44 +198,79 @@ public class VoteRecorder {
 		votesCandidateVicePresident2=0;
 		voters=0;
 	}
-	
-	
+
+
 	/**
 	 * Returns a string with a , as delimiter with the votes for both candidates for presidents
 	 * @return string in the format [votesPresident1,votesPresident2]
 	 */
 	public static String getCurrentVotePresident(){
-	return Integer.toString(votesCandidatePresident1) + "," + Integer.toString(votesCandidatePresident2);
+		return Integer.toString(votesCandidatePresident1) + "," + Integer.toString(votesCandidatePresident2);
 	}
-	
+
 	/**
 	 * Returns a string with a , as delimiter with the votes for both candidates for Vice Presidents
 	 * @return string in the format [votesVicePresident1,votesVicePresident2]
 	 */
 	public static String getCurrentVoteVicePresident(){
-	return Integer.toString(votesCandidateVicePresident1) + "," + Integer.toString(votesCandidateVicePresident2);
+		return Integer.toString(votesCandidateVicePresident1) + "," + Integer.toString(votesCandidateVicePresident2);
 	}
-	
+
 	public void getAndConfirmVotes(){
-		
+
 	}
-	
-	private static void getAVote(){
+
+	/**
+	 * Gets a single vote for either the president or for the vice president.
+	 * It uses the names of the candidates to check if it should ask for the vice president vote or for the president vote
+	 * 
+	 * @param name1 Name of the first candidate, this must be a valid name for either the president or the vice president
+	 * @param name2 Name of the second candidate, this must be a valid name for either the president or the vice president
+	 * @return 0 if no vote cast, 1 if vote cast for name1, 2 if vote cast for name2
+	 */
+	private static int getAVote(String name1, String name2){
+		if(name1.equals(nameCandidatePresident1)&&name2.equals(nameCandidatePresident2)){
+			System.out.println("If you want " + name1 + " to be president please vote a 1.");
+			System.out.println("If you instead want " + name2 + " to be president please vote a 2.");
+		}else{
+			System.out.println("If you want " + name1 + " to be vice president please vote a 1.");
+			System.out.println("If you instead want " + name2 + " to be vice president please vote a 2.");
+
+		}
+		Scanner keyboard = new Scanner(System.in);
+		int temp=0;
+		boolean tempB = true;
+		System.out.println("Please enter your vote now:");
+		while(tempB){
+
+			temp = keyboard.nextInt();
+			if (temp==1||temp==2||temp==0){
+				tempB=false;
+				keyboard.close();
+				
+			}else{
+				System.err.println("Invalid input, please enter your vote again");
+			}
+		}
 		
+		keyboard.close();
+		return temp;
+
+
 	}
-	
+
 	private static void getVotes(){
-		
+
 	}
-	
+
 	private static void confirmVotes(){
-		
+
 	}
-	
+
 	private static void recordVotes(){
-		
+
 	}
-	
-	
+
+
 
 }
