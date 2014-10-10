@@ -121,6 +121,28 @@ public class VoteRecorder {
 		}
 	}
 	
+	/**
+	 * Sets the names of the presidential candidates by combining their first and last name
+	 * Only works if the amount of votes for the president is equal to 0
+	 * This in order to prevent fraud during the election
+	 * @param first1 first name of the first candidate
+	 * @param last1 last name of the first candidate
+	 * @param first2 first name of the second candidate
+	 * @param last2 last name of the second candidate
+	 * @return true if succesful, false if the amount of votes was not equal to 0
+	 */
+	public static Boolean setCandidatesPresident(String first1, String last1, String first2, String last2){
+		if(votesCandidatePresident1==0&&votesCandidatePresident2==0){
+			return false;
+		}else{
+			nameCandidatePresident1=first1+" " + last1;	//Add a space in between the first and last name
+			nameCandidatePresident2=first2+" " + last2;
+			return true;
+		}
+	}
+	
+	
+	
 	
 
 }
