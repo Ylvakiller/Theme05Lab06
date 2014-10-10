@@ -88,7 +88,7 @@ public class VoteRecorder {
 	 * @param candidate2 Name that you want to set the second candidate of president to
 	 * @return true if succesful, false if the amount of votes was not equal to 0
 	 */
-	public static Boolean setCandidatesPresident(String candidate1, String candidate2){
+	public static boolean setCandidatesPresident(String candidate1, String candidate2){
 		if(votesCandidatePresident1==0&&votesCandidatePresident2==0){
 			return false;
 		}else{
@@ -106,7 +106,7 @@ public class VoteRecorder {
 	 * @param name the name to change the name of the candidate towards
 	 * @return true if succesful, false if the amount of votes was not equal to 0 or the index was of a wrong format
 	 */
-	public static Boolean setCandidatesPresident(int index, String name){
+	public static boolean setCandidatesPresident(int index, String name){
 		if(votesCandidatePresident1==0&&votesCandidatePresident2==0){
 			return false;
 		}else{
@@ -129,9 +129,9 @@ public class VoteRecorder {
 	 * @param last1 last name of the first candidate
 	 * @param first2 first name of the second candidate
 	 * @param last2 last name of the second candidate
-	 * @return true if succesful, false if the amount of votes was not equal to 0
+	 * @return true if successful, false if the amount of votes was not equal to 0
 	 */
-	public static Boolean setCandidatesPresident(String first1, String last1, String first2, String last2){
+	public static boolean setCandidatesPresident(String first1, String last1, String first2, String last2){
 		if(votesCandidatePresident1==0&&votesCandidatePresident2==0){
 			return false;
 		}else{
@@ -141,6 +141,29 @@ public class VoteRecorder {
 		}
 	}
 	
+	
+	/**
+	 * Only works if the amount of votes for the president is equal to 0
+	 * This in order to prevent fraud during the election
+	 * @param index 1 or 2 depending on which candidates name to change
+	 * @param first first name that you want the new candidate to have
+	 * @param last last name that you want the new candidate to have
+	 * @return true if successful, false if the amount of votes was not 0 or the index was not 1 or 2
+	 */
+	public static boolean setCandidatesPresident(int index, String first, String last){
+		if(votesCandidatePresident1==0&&votesCandidatePresident2==0){
+			return false;
+		}else{
+			if(index==1){
+				nameCandidatePresident1=first+" " + last;
+			}else if (index==2){
+				nameCandidatePresident2=first+" " + last;
+			}else{
+				return false;
+			}
+			return true;
+		}
+	}
 	
 	
 	
