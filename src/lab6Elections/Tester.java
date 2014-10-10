@@ -63,6 +63,12 @@ package lab6Elections;
  * Ones a vote has been cast and confirmed it cannot be changed
  */
 
+
+/**
+ * @author Ylva
+ * 
+ *
+ */
 public class Tester {
 
 	public static void main(String[] args) {
