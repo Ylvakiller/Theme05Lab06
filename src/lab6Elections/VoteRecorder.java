@@ -47,7 +47,22 @@ public class VoteRecorder {
 	 */
 	private static int votesCandidateVicePresident2;
 	
+	/**
+	 * This is the vote that this specific person has cast for president
+	 * If 0 this means no vote is cast, if 1 or 2 it means that candidate for president
+	 */
+	private int myVoteForPresident;
 	
+	/**
+	 * This is the vote that this specific person has cast for vice president
+	 * If 0 this means no vote is cast, if 1 or 2 it means that candidate for vice president
+	 */
+	private int myVoteForVicePresident;
+	
+	/**
+	 * The voteId, can be used to figure out what voter this is, defaults to the total amount of votes cast+1
+	 */
+	private int voteId;
 	
 	
 	
