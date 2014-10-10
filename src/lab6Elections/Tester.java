@@ -1,7 +1,7 @@
 package lab6Elections;
 
 /*
- * Definition found on bb:
+ * Definition found on blackboard:
  * Elections: 
  * Write a program that will record the votes for one of two candidates by using the class 
  * VoteRecorder, which you will design and create. Vote Recorder will have static variables 
@@ -45,7 +45,7 @@ package lab6Elections;
  * Use a loop to record the votes of many voters. 
  * Create a new VoteRecorder object for each voter.
  * After all the voters are done, present the results. 
- * In addition, write a test program to test the various menthos for setting the names of the candidates for president.
+ * In addition, write a test program to test the various methods for setting the names of the candidates for president.
  */
 
 /*

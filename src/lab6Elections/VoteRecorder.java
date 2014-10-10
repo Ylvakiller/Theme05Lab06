@@ -49,7 +49,6 @@ public class VoteRecorder {
 	
 	/**
 	 * Holds the amount of total voters, this is used to calculate the next voteID in case a voter does not vote for a president of vice president
-	 * 
 	 */
 	private static int voters;
 	
@@ -86,7 +85,7 @@ public class VoteRecorder {
 	 * This in order to prevent fraud during the election
 	 * @param candidate1 Name that you want to set the first candidate of president to
 	 * @param candidate2 Name that you want to set the second candidate of president to
-	 * @return true if succesful, false if the amount of votes was not equal to 0
+	 * @return true if successful, false if the amount of votes was not equal to 0
 	 */
 	public static boolean setCandidatesPresident(String candidate1, String candidate2){
 		if(votesCandidatePresident1==0&&votesCandidatePresident2==0){
@@ -104,7 +103,7 @@ public class VoteRecorder {
 	 * This in order to prevent fraud during the election
 	 * @param index 1 or 2 depending on which candidate for president to change
 	 * @param name the name to change the name of the candidate towards
-	 * @return true if succesful, false if the amount of votes was not equal to 0 or the index was of a wrong format
+	 * @return true if successful, false if the amount of votes was not equal to 0 or the index was of a wrong format
 	 */
 	public static boolean setCandidatesPresident(int index, String name){
 		if(votesCandidatePresident1==0&&votesCandidatePresident2==0){
@@ -170,7 +169,7 @@ public class VoteRecorder {
 	 * This in order to prevent fraud during the election
 	 * @param candidate1 Name that you want to set the first candidate of vice president to
 	 * @param candidate2 Name that you want to set the second candidate of vice president to
-	 * @return true if succesful, false if the amount of votes was not equal to 0
+	 * @return true if successful, false if the amount of votes was not equal to 0
 	 */
 	public static boolean setCandidatesVicePresident(String candidate1, String candidate2){
 		if(votesCandidatePresident1==0&&votesCandidatePresident2==0){
