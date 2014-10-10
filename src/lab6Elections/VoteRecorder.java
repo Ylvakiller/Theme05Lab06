@@ -13,39 +13,40 @@ public class VoteRecorder {
 	/**
 	 * Name of the first candidate for president.
 	 */
-	public static String nameCandidatePresident1;
+	private static String nameCandidatePresident1;
 	/**
 	 * Name of the second candidate for President.
 	 */
-	public static String nameCandidatePresident2;
+	private static String nameCandidatePresident2;
 	/**
 	 * Name of the first Vice President candidate.
 	 */
-	public static String nameCandidateVicePresident1;
+	private static String nameCandidateVicePresident1;
 	/**
 	 * Name of the second Vice President Candidate.
 	 */
-	public static String nameCandidateVicePresident2;
+	private static String nameCandidateVicePresident2;
 	
 	/**
 	 * Total amount of votes that have been cast for the first candidate for president.
 	 */
-	public static int votesCandidatePresident1;
+	private static int votesCandidatePresident1;
 	
 	/**
 	 * Total amount of votes that have been cast for the second candidate for president.
 	 */
-	public static int votesCandidatePresident2;
+	private static int votesCandidatePresident2;
 	
 	/**
 	 * Total amount of votes that have been cast for the first candidate for vice president.
 	 */
-	public static int votesCandidateVicePresident1;
+	private static int votesCandidateVicePresident1;
 	
 	/**
 	 * Total amount of votes that have been cast for the second candidate for vice president.
 	 */
-	public static int votesCandidateVicePresident2;
+	private static int votesCandidateVicePresident2;
+	
 	
 	
 	
