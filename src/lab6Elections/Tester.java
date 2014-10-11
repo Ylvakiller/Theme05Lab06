@@ -64,7 +64,7 @@ public class Tester {
 
 	public static void main(String[] args) {
 		System.out.println("Setting the president names");
-		
+		VoteRecorder namer = new VoteRecorder("Annie kennedy", "Bob Hope", "John McCain", "Susan Bush");
 
 	}
 
