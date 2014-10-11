@@ -72,6 +72,7 @@ public class Tester {
 		}
 		System.out.println("Checking what the vote counts of all presidential candidates are:");
 		System.out.println("There are a total of " + VoteRecorder.getCurrentVotePresident().substring(0, VoteRecorder.getCurrentVotePresident().indexOf(",")) + " votes cast for the first presidential candidate which is named " + VoteRecorder.getNameCandidatePresident1());
+		System.out.println("There are a total of " + VoteRecorder.getCurrentVotePresident().substring(VoteRecorder.getCurrentVotePresident().indexOf(",")+1) + " votes cast for the second presidential candidate which is named " + VoteRecorder.getNameCandidatePresident2());
 		System.out.println();
 		System.out.println();
 		System.out.println();

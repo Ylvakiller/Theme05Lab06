@@ -308,7 +308,7 @@ public class VoteRecorder {
 			}else{
 				temp = getVotes();
 				sub1 = temp.substring(0, temp.indexOf(","));
-				sub2 = temp.substring(temp.indexOf(","));
+				sub2 = temp.substring(temp.indexOf(",")+1);
 			}
 		}
 	}
@@ -416,7 +416,7 @@ public class VoteRecorder {
 	/**
 	 * This method will be run after votes have been confirmed and stores the votes in the correct variables.
 	 * @param president The vote for president
-	 * @param vicepresident The vote for vice president
+	 * @param vicePresident The vote for vice president
 	 */
 	private void recordVotes(int president, int vicePresident){
 		myVoteForPresident=president;	
