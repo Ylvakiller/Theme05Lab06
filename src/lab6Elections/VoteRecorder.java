@@ -1,5 +1,7 @@
 package lab6Elections;
 
+
+import java.math.BigInteger;
 import java.util.Scanner;
 
 /**
@@ -8,6 +10,17 @@ import java.util.Scanner;
  * Allows the names for candidates to be changed, but only when the number of votes is 0 for all candidates
  * Allows the votes to be reset. 
  * Can return the standings for the election
+ * 
+ * The total amount of votes are stored in BigInteger types to allow more then 9,223,372,036,854,775,807 votes. (maximum size of a long data type)
+ * Okay there are only around 7,000,000,000 people on the planet so each person would have to vote at least 1.3 billion times for it to reach the maximum value of long.
+ * However I feel that it is better to be safe then sorry, imagine if I would have used an int data type...
+ * Then there would be only 2 billion votes possible for one candidate, even with our current global population that would mean that around 1/3 people could vote.
+ * Imagine a system like this needing to be used in the far future when the population of humans spans between planets...
+ * 
+ * As I said, you do not need to use BigIntegers however it is better to be save then sorry,
+ * Especially since BigIntegers are basically int[] that are calculated into 1 big number so it allocates enough memory but only as much as it needs.
+ * For all values of votes below Int.Maxvalue() it will only allocate the amount of bytes an int data type has,
+ * So in that range it is more memory efficient then a long data type.
  * 
  * Records the vote for a specific voter
  * @author Ylva
@@ -33,27 +46,27 @@ public class VoteRecorder {
 	/**
 	 * Total amount of votes that have been cast for the first candidate for president.
 	 */
-	private static int votesCandidatePresident1;
+	private static BigInteger votesCandidatePresident1;
 
 	/**
 	 * Total amount of votes that have been cast for the second candidate for president.
 	 */
-	private static int votesCandidatePresident2;
+	private static BigInteger votesCandidatePresident2;
 
 	/**
 	 * Total amount of votes that have been cast for the first candidate for vice president.
 	 */
-	private static int votesCandidateVicePresident1;
+	private static BigInteger votesCandidateVicePresident1;
 
 	/**
 	 * Total amount of votes that have been cast for the second candidate for vice president.
 	 */
-	private static int votesCandidateVicePresident2;
+	private static BigInteger votesCandidateVicePresident2;
 
 	/**
 	 * Holds the amount of total voters, this is used to calculate the next voteID in case a voter does not vote for a president of vice president
 	 */
-	private static int voters;
+	private static BigInteger voters;
 
 	/**
 	 * This is the vote that this specific person has cast for president
@@ -70,22 +83,33 @@ public class VoteRecorder {
 	/**
 	 * The voteID, can be used to figure out what voter this is, defaults to voters +1
 	 */
-	private int voteID;
+	private BigInteger voteID;
 
 	/**
 	 * placeholder, will be deleted later
 	 */
 	private boolean confirmed;
 
+	
 	/**
 	 * Default constructor, sets voteID and increments the amount of voters
 	 */
 	public VoteRecorder(){
-		voteID = voters+1;
-		voters++;
+		voteID = voters.add(BigInteger.ONE);
+		voters=voters.add(BigInteger.ONE);
 
 	}
 
+	/**
+	 * This constructor is used in the testing of this whole program, it records votes without any user interaction
+	 * @param president the vote needed to be recorded for president
+	 * @param vicePresident	The vote needed to be recorder for vice president
+	 */
+	public VoteRecorder(int president,int vicePresident){
+		voteID = voters.add(BigInteger.ONE);
+		voters=voters.add(BigInteger.ONE);
+		recordVotes(president, vicePresident);
+	}
 	/**
 	 * Only works if the amount of votes for the president is equal to 0
 	 * This in order to prevent fraud during the election
@@ -94,7 +118,7 @@ public class VoteRecorder {
 	 * @return true if successful, false if the amount of votes was not equal to 0
 	 */
 	public static boolean setCandidatesPresident(String candidate1, String candidate2){
-		if(votesCandidatePresident1==0&&votesCandidatePresident2==0){
+		if(votesCandidatePresident1.equals(BigInteger.ZERO)&&votesCandidatePresident2.equals(BigInteger.ZERO)){
 			return false;
 		}else{
 			nameCandidatePresident1=candidate1;
@@ -112,7 +136,7 @@ public class VoteRecorder {
 	 * @return true if successful, false if the amount of votes was not equal to 0 or the index was of a wrong format
 	 */
 	public static boolean setCandidatesPresident(int index, String name){
-		if(votesCandidatePresident1==0&&votesCandidatePresident2==0){
+		if(votesCandidatePresident1.equals(BigInteger.ZERO)&&votesCandidatePresident2.equals(BigInteger.ZERO)){
 			return false;
 		}else{
 			if(index==1){
@@ -137,7 +161,7 @@ public class VoteRecorder {
 	 * @return true if successful, false if the amount of votes was not equal to 0
 	 */
 	public static boolean setCandidatesPresident(String first1, String last1, String first2, String last2){
-		if(votesCandidatePresident1==0&&votesCandidatePresident2==0){
+		if(votesCandidatePresident1.equals(BigInteger.ZERO)&&votesCandidatePresident2.equals(BigInteger.ZERO)){
 			return false;
 		}else{
 			nameCandidatePresident1=first1+" " + last1;	//Add a space in between the first and last name
@@ -156,7 +180,7 @@ public class VoteRecorder {
 	 * @return true if successful, false if the amount of votes was not 0 or the index was not 1 or 2
 	 */
 	public static boolean setCandidatesPresident(int index, String first, String last){
-		if(votesCandidatePresident1==0&&votesCandidatePresident2==0){
+		if(votesCandidatePresident1.equals(BigInteger.ZERO)&&votesCandidatePresident2.equals(BigInteger.ZERO)){
 			return false;
 		}else{
 			if(index==1){
@@ -178,7 +202,7 @@ public class VoteRecorder {
 	 * @return true if successful, false if the amount of votes was not equal to 0
 	 */
 	public static boolean setCandidatesVicePresident(String candidate1, String candidate2){
-		if(votesCandidatePresident1==0&&votesCandidatePresident2==0){
+		if(votesCandidatePresident1.equals(BigInteger.ZERO)&&votesCandidatePresident2.equals(BigInteger.ZERO)){
 			return false;
 		}else{
 			nameCandidateVicePresident1=candidate1;
@@ -192,11 +216,11 @@ public class VoteRecorder {
 	 * Also sets the amount of voters to 0
 	 */
 	public static void resetVotes(){
-		votesCandidatePresident1=0;
-		votesCandidatePresident2=0;
-		votesCandidateVicePresident1=0;
-		votesCandidateVicePresident2=0;
-		voters=0;
+		votesCandidatePresident1=BigInteger.ZERO;
+		votesCandidatePresident2=BigInteger.ZERO;
+		votesCandidateVicePresident1=BigInteger.ZERO;
+		votesCandidateVicePresident2=BigInteger.ZERO;
+		voters=BigInteger.ZERO;
 	}
 
 
@@ -205,7 +229,7 @@ public class VoteRecorder {
 	 * @return string in the format [votesPresident1,votesPresident2]
 	 */
 	public static String getCurrentVotePresident(){
-		return Integer.toString(votesCandidatePresident1) + "," + Integer.toString(votesCandidatePresident2);
+		return votesCandidatePresident1.toString() + "," + votesCandidatePresident2.toString();
 	}
 
 	/**
@@ -213,7 +237,7 @@ public class VoteRecorder {
 	 * @return string in the format [votesVicePresident1,votesVicePresident2]
 	 */
 	public static String getCurrentVoteVicePresident(){
-		return Integer.toString(votesCandidateVicePresident1) + "," + Integer.toString(votesCandidateVicePresident2);
+		return votesCandidateVicePresident1.toString() + "," + votesCandidateVicePresident2.toString();
 	}
 
 	/**
@@ -346,16 +370,16 @@ public class VoteRecorder {
 	private void recordVotes(int president, int vicePresident){
 		myVoteForPresident=president;	
 		if(president==1){
-			votesCandidatePresident1++;
+			votesCandidatePresident1=votesCandidatePresident1.add(BigInteger.ONE);
 		}else if(president==2){
-			votesCandidatePresident2++;
+			votesCandidatePresident2=votesCandidatePresident2.add(BigInteger.ONE);;
 		}
 		
 		myVoteForVicePresident=vicePresident;	
 		if(vicePresident==1){
-			votesCandidateVicePresident1++;
+			votesCandidateVicePresident1=votesCandidateVicePresident1.add(BigInteger.ONE);
 		}else if(vicePresident==2){
-			votesCandidateVicePresident2++;
+			votesCandidateVicePresident2=votesCandidateVicePresident2.add(BigInteger.ONE);
 		}
 	}
 
