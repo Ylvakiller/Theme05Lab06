@@ -71,14 +71,16 @@ public class Tester {
 			System.err.println("Whoops programming error :O");
 		}
 		System.out.println("Checking what the vote counts of all presidential candidates are:");
-		System.out.println("There are a total of " + VoteRecorder.getCurrentVotePresident().substring(0, VoteRecorder.getCurrentVotePresident().indexOf(",")) + " votes cast for the first presidential candidate which is named " + VoteRecorder.getNameCandidatePresident1());
-		System.out.println("There are a total of " + VoteRecorder.getCurrentVotePresident().substring(VoteRecorder.getCurrentVotePresident().indexOf(",")+1) + " votes cast for the second presidential candidate which is named " + VoteRecorder.getNameCandidatePresident2());
-		System.out.println();
-		System.out.println();
-		System.out.println();
+		System.out.println("There are a total of " + VoteRecorder.getCurrentVotePresident().substring(0, VoteRecorder.getCurrentVotePresident().indexOf(",")) + " votes cast for the first presidential candidate which is named " + VoteRecorder.getNameCandidatePresident1() + ".");
+		System.out.println("There are a total of " + VoteRecorder.getCurrentVotePresident().substring(VoteRecorder.getCurrentVotePresident().indexOf(",")+1) + " votes cast for the second presidential candidate which is named " + VoteRecorder.getNameCandidatePresident2() + ".");
 		
 		System.out.println();
+		System.out.println("Now checking the vice president:");
+		System.out.println("Up till now the candidate for vice president " + VoteRecorder.getNameCandidateVicePresident1() + " has gotten " + VoteRecorder.getCurrentVoteVicePresident().substring(0, VoteRecorder.getCurrentVoteVicePresident().indexOf(",")) + " votes.");
+		System.out.println("Up till now the candidate for vice president " + VoteRecorder.getNameCandidateVicePresident2() + " has gotten " + VoteRecorder.getCurrentVoteVicePresident().substring(VoteRecorder.getCurrentVoteVicePresident().indexOf(",")+1) + " votes.");
 		System.out.println();
+		System.out.println("Seems that the program so far runs okay.");
+		System.out.println("We checked if we can enter names and if the amount of votes start at the correct number");
 
 	}
 
