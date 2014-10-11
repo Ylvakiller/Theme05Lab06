@@ -126,6 +126,41 @@ public class VoteRecorder {
 	}
 	
 	/**
+	 * Getter method for the name of the first presidential candidate
+	 * @return a string with the name of the first presidential candidate
+	 */
+	public static String getNameCandidatePresident1() {
+		return nameCandidatePresident1;
+	}
+	
+	/**
+	 * Getter method for the name of the second presidential candidate
+	 * @return a string with the name of the second presidential candidate
+	 */
+
+	public static String getNameCandidatePresident2() {
+		return nameCandidatePresident2;
+	}
+	
+	/**
+	 * Getter method to retrieve the name of the first candidate for vice president
+	 * @return a string the name of the second candidate for vice president
+	 */
+
+	public static String getNameCandidateVicePresident1() {
+		return nameCandidateVicePresident1;
+	}
+	
+	/**
+	 * Getter method to retrieve the name of the second candidate for vice president
+	 * @return a string the name of the second candidate for vice president
+	 */
+
+	public static String getNameCandidateVicePresident2() {
+		return nameCandidateVicePresident2;
+	}
+
+	/**
 	 * Only works if the amount of votes for the president is equal to 0
 	 * This in order to prevent fraud during the election
 	 * @param candidate1 Name that you want to set the first candidate of president to
