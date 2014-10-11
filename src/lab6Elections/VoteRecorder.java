@@ -110,6 +110,21 @@ public class VoteRecorder {
 		voters=voters.add(BigInteger.ONE);
 		recordVotes(president, vicePresident);
 	}
+	
+	/**
+	 * This constructor does not count, it is a constructor used to only set names of the presidents
+	 * The constructor sets the votes back to 0 for all of this type
+	 * @param president1 name of the first candidate for president
+	 * @param president2 name of the second candidate for president
+	 * @param vicePresident1 name of the first candidate for vice president
+	 * @param VicePresident2 name of the second candidate for vice president
+	 */
+	public VoteRecorder(String president1, String president2, String vicePresident1, String VicePresident2){
+		resetVotes();
+		setCandidatesPresident(president1, president2);
+		setCandidatesVicePresident(vicePresident1, VicePresident2);
+	}
+	
 	/**
 	 * Only works if the amount of votes for the president is equal to 0
 	 * This in order to prevent fraud during the election

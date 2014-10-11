@@ -63,6 +63,7 @@ package lab6Elections;
 public class Tester {
 
 	public static void main(String[] args) {
+		System.out.println("Setting the president names");
 		
 
 	}
