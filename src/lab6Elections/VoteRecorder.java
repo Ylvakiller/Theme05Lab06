@@ -29,7 +29,7 @@ public class VoteRecorder {
 	/**
 	 * Name of the first candidate for president.
 	 */
-	private static String nameCandidatePresident1;
+	private static String nameCandidatePresident1 = "";
 	/**
 	 * Name of the second candidate for President.
 	 */
@@ -46,27 +46,27 @@ public class VoteRecorder {
 	/**
 	 * Total amount of votes that have been cast for the first candidate for president.
 	 */
-	private static BigInteger votesCandidatePresident1;
+	private static BigInteger votesCandidatePresident1 = BigInteger.ZERO;
 
 	/**
 	 * Total amount of votes that have been cast for the second candidate for president.
 	 */
-	private static BigInteger votesCandidatePresident2;
+	private static BigInteger votesCandidatePresident2 = BigInteger.ZERO;
 
 	/**
 	 * Total amount of votes that have been cast for the first candidate for vice president.
 	 */
-	private static BigInteger votesCandidateVicePresident1;
+	private static BigInteger votesCandidateVicePresident1 = BigInteger.ZERO;
 
 	/**
 	 * Total amount of votes that have been cast for the second candidate for vice president.
 	 */
-	private static BigInteger votesCandidateVicePresident2;
+	private static BigInteger votesCandidateVicePresident2 = BigInteger.ZERO;
 
 	/**
 	 * Holds the amount of total voters, this is used to calculate the next voteID in case a voter does not vote for a president of vice president
 	 */
-	private static BigInteger voters;
+	private static BigInteger voters = BigInteger.ZERO;
 
 	/**
 	 * This is the vote that this specific person has cast for president
@@ -169,11 +169,12 @@ public class VoteRecorder {
 	 */
 	public static boolean setCandidatesPresident(String candidate1, String candidate2){
 		if(votesCandidatePresident1.equals(BigInteger.ZERO)&&votesCandidatePresident2.equals(BigInteger.ZERO)){
-			return false;
-		}else{
+			
 			nameCandidatePresident1=candidate1;
 			nameCandidatePresident2=candidate2;
 			return true;
+		}else{
+			return false;
 		}
 
 	}
@@ -187,8 +188,6 @@ public class VoteRecorder {
 	 */
 	public static boolean setCandidatesPresident(int index, String name){
 		if(votesCandidatePresident1.equals(BigInteger.ZERO)&&votesCandidatePresident2.equals(BigInteger.ZERO)){
-			return false;
-		}else{
 			if(index==1){
 				nameCandidatePresident1=name;
 			}else if (index==2){
@@ -197,6 +196,8 @@ public class VoteRecorder {
 				return false;
 			}
 			return true;
+		}else{
+			return false;
 		}
 	}
 
@@ -212,11 +213,11 @@ public class VoteRecorder {
 	 */
 	public static boolean setCandidatesPresident(String first1, String last1, String first2, String last2){
 		if(votesCandidatePresident1.equals(BigInteger.ZERO)&&votesCandidatePresident2.equals(BigInteger.ZERO)){
-			return false;
-		}else{
 			nameCandidatePresident1=first1+" " + last1;	//Add a space in between the first and last name
 			nameCandidatePresident2=first2+" " + last2;
 			return true;
+		}else{
+			return false;
 		}
 	}
 
@@ -231,8 +232,6 @@ public class VoteRecorder {
 	 */
 	public static boolean setCandidatesPresident(int index, String first, String last){
 		if(votesCandidatePresident1.equals(BigInteger.ZERO)&&votesCandidatePresident2.equals(BigInteger.ZERO)){
-			return false;
-		}else{
 			if(index==1){
 				nameCandidatePresident1=first+" " + last;
 			}else if (index==2){
@@ -241,6 +240,8 @@ public class VoteRecorder {
 				return false;
 			}
 			return true;
+		}else{
+			return false;
 		}
 	}
 
@@ -253,11 +254,11 @@ public class VoteRecorder {
 	 */
 	public static boolean setCandidatesVicePresident(String candidate1, String candidate2){
 		if(votesCandidatePresident1.equals(BigInteger.ZERO)&&votesCandidatePresident2.equals(BigInteger.ZERO)){
-			return false;
-		}else{
 			nameCandidateVicePresident1=candidate1;
 			nameCandidateVicePresident2=candidate2;
 			return true;
+		}else{
+			return false;
 		}
 	}
 
