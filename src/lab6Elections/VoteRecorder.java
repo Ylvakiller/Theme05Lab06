@@ -216,8 +216,26 @@ public class VoteRecorder {
 		return Integer.toString(votesCandidateVicePresident1) + "," + Integer.toString(votesCandidateVicePresident2);
 	}
 
+	/**
+	 * Gets the votes from a user and keeps on going until the user has entered votes that he also confirmed.
+	 * It will then record those votes in the correct variables
+	 */
 	public void getAndConfirmVotes(){
+		boolean temb = true;
+		String temp = getVotes();
+		String sub1 = temp.substring(0, temp.indexOf(","));
+		String sub2 = temp.substring(temp.indexOf(","));
+		while(temb){
 
+			if(confirmVotes(Integer.valueOf(sub1), Integer.valueOf(sub2))){
+				recordVotes(Integer.valueOf(sub1),Integer.valueOf(sub2));
+				temb=false;
+			}else{
+				temp = getVotes();
+				sub1 = temp.substring(0, temp.indexOf(","));
+				sub2 = temp.substring(temp.indexOf(","));
+			}
+		}
 	}
 
 	/**
@@ -247,12 +265,12 @@ public class VoteRecorder {
 			if (temp==1||temp==2||temp==0){
 				tempB=false;
 				keyboard.close();
-				
+
 			}else{
 				System.err.println("Invalid input, please enter your vote again");
 			}
 		}
-		
+
 		keyboard.close();
 		return temp;
 
@@ -302,7 +320,7 @@ public class VoteRecorder {
 		System.out.println("If you still agree with these votes please say yes, otherwise say no.");
 		String temp = "";
 		boolean tempB=true;
-		
+
 		while(tempB){
 			Scanner keyboard = new Scanner(System.in);
 			temp = keyboard.next();
@@ -320,8 +338,25 @@ public class VoteRecorder {
 		return confirmed;
 	}
 
-	private static void recordVotes(){
-
+	/**
+	 * This method will be run after votes have been confirmed and stores the votes in the correct variables.
+	 * @param president The vote for president
+	 * @param vicepresident The vote for vice president
+	 */
+	private void recordVotes(int president, int vicePresident){
+		myVoteForPresident=president;	
+		if(president==1){
+			votesCandidatePresident1++;
+		}else if(president==2){
+			votesCandidatePresident2++;
+		}
+		
+		myVoteForVicePresident=vicePresident;	
+		if(vicePresident==1){
+			votesCandidateVicePresident1++;
+		}else if(vicePresident==2){
+			votesCandidateVicePresident2++;
+		}
 	}
 
 
