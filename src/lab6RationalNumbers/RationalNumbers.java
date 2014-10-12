@@ -78,7 +78,7 @@ public class RationalNumbers {
 	 * @param denominator Used in the calculations as a denominator
 	 * @return an int that is the greatest common divisor
 	 */
-	private int getGCD(int numerator, int denominator){
+	static private int getGCD(int numerator, int denominator){
 		BigInteger tempNumerator =BigInteger.valueOf(numerator);
 		BigInteger tempDenominator =BigInteger.valueOf(denominator);
 		BigInteger tempGCD = tempNumerator.gcd(tempDenominator);

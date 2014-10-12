@@ -26,6 +26,7 @@ package lab6RationalNumbers;
  */
 public class rationalTester {
 	public static void main(String[] args) {
+	
 	}
 
 }
