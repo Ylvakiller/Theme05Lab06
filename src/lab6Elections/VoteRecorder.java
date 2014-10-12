@@ -328,6 +328,7 @@ public class VoteRecorder {
 			System.out.println("If you instead want " + name2 + " to be vice president please vote a 2.");
 
 		}
+		@SuppressWarnings("resource")
 		Scanner keyboard = new Scanner(System.in);
 		int temp=0;
 		boolean tempB = true;
