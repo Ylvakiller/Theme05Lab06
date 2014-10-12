@@ -19,7 +19,18 @@ public class RationalNumbers {
 	 */
 	public RationalNumbers(){
 		numerator =0;
-		denominator = 0;
+		denominator = 1;
+	}
+	
+	/**
+	 * Constructor that takes as input a numerator and denominator
+	 * @param numerator The numerator to store
+	 * @param denominator The denominator to store, cannot be 0
+	 */
+	public RationalNumbers(int numerator, int denominator){
+		this.numerator =numerator;
+		this.denominator =denominator;
+		simplify();
 	}
 	
 	/**
