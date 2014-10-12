@@ -46,7 +46,7 @@ public class RationalNumbers {
 	 * @param numerator The numerator to store
 	 * @param denominator The denominator to store, cannot be 0
 	 */
-	public void setNumerator(int numerator, int denominator) {
+	public void setRatio(int numerator, int denominator) {
 		this.numerator = numerator;
 		this.denominator =denominator;
 		simplify();
