@@ -101,9 +101,9 @@ public class Tester {
 		VoteRecorder randomVote = new VoteRecorder(randomPresident,randomVicePresident);
 		System.out.println("Checking what the votes are:");
 		printVotes();
-		System.out.println("I will now simulate 10 000 votes.");
+		System.out.println("I will now simulate 10 000 000 votes.");
 		i=0;
-		while(i<10000){
+		while(i<10000000){
 			randomPresident = rand.nextInt(2)+1;
 			randomVicePresident = rand.nextInt(2)+1;
 			VoteRecorder simulatedVote = new VoteRecorder(randomPresident,randomVicePresident);
@@ -111,7 +111,8 @@ public class Tester {
 		}
 		printVotes();
 		System.out.println("As you can see, using a random number generator is not the most accurate way to simulate an election.");
-		System.out.println("This because there is a 50 50 change for each president to get a vote, if I would let this program simulate 1 000 000 000 000 votes we would still only see a minute difference.");
+		System.out.println("This because there is a 50 50 change for each president to get a vote," + System.lineSeparator() + "If I would let this program simulate 1 000 000 000 000 votes we would still only see a minute difference.");
+		System.out.println("But it'll do for testing the VoteRecorder class");
 		
 	}
 
