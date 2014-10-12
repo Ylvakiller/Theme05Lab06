@@ -439,7 +439,7 @@ public class VoteRecorder {
 	 * Closes the Scanner that is used to get keyboard input.
 	 * Closes the whole program using a System exit with code 0
 	 */
-	private static void close(){
+	public static void close(){
 		keyboard.close();
 		System.exit(0);
 	}

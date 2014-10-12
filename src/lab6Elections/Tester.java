@@ -125,6 +125,9 @@ public class Tester {
 		System.out.println();
 		System.out.println("We tested everything, time to close things down...");
 		
+		System.out.println("Bye, Bye");
+		VoteRecorder.close();
+		
 	}
 
 	/**
