@@ -67,6 +67,8 @@ public class VoteRecorder {
 	 * Holds the amount of total voters, this is used to calculate the next voteID in case a voter does not vote for a president of vice president
 	 */
 	private static BigInteger voters = BigInteger.ZERO;
+	
+	private static Scanner keyboard;
 
 	/**
 	 * This is the vote that this specific person has cast for president
@@ -109,6 +111,7 @@ public class VoteRecorder {
 		voteID = voters.add(BigInteger.ONE);
 		voters=voters.add(BigInteger.ONE);
 		recordVotes(president, vicePresident);
+		keyboard = new Scanner(System.in);
 	}
 	
 	/**
@@ -123,6 +126,7 @@ public class VoteRecorder {
 		resetVotes();
 		setCandidatesPresident(president1, president2);
 		setCandidatesVicePresident(vicePresident1, VicePresident2);
+		keyboard = new Scanner(System.in);
 	}
 	
 	/**
@@ -328,8 +332,6 @@ public class VoteRecorder {
 			System.out.println("If you instead want " + name2 + " to be vice president please vote a 2.");
 
 		}
-		@SuppressWarnings("resource")
-		Scanner keyboard = new Scanner(System.in);
 		int temp=0;
 		boolean tempB = true;
 		System.out.println("Please enter your vote now:");
@@ -353,7 +355,6 @@ public class VoteRecorder {
 	 */
 	private static String getVotes(){
 		int votePresident=getAVote(nameCandidatePresident1,nameCandidatePresident2);
-		//int votePresident = 0;
 		int voteVicePresident = getAVote(nameCandidateVicePresident1,nameCandidateVicePresident2);
 		return Integer.toString(votePresident) + "," + Integer.toString(voteVicePresident);
 	}
@@ -394,8 +395,6 @@ public class VoteRecorder {
 		boolean tempB=true;
 
 		while(tempB){
-			@SuppressWarnings("resource")
-			Scanner keyboard = new Scanner(System.in);
 			temp = keyboard.next();
 			if (temp.equalsIgnoreCase("yes")){
 				confirmed = true;
@@ -432,6 +431,8 @@ public class VoteRecorder {
 			votesCandidateVicePresident2=votesCandidateVicePresident2.add(BigInteger.ONE);
 		}
 	}
+	
+	
 
 
 

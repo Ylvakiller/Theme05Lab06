@@ -121,6 +121,10 @@ public class Tester {
 		if(!VoteRecorder.setCandidatesVicePresident("Thies Keulen", "Chris Mosterd")){
 			System.out.println("Nope, even vice president wont do the trick");
 		}
+		
+		System.out.println();
+		System.out.println("We tested everything, time to close things down...");
+		
 	}
 
 	/**
