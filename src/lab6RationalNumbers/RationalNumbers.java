@@ -53,4 +53,14 @@ public class RationalNumbers {
 		String temp = String.valueOf(numerator) + "/" + String.valueOf(denominator);
 		return temp;
 	}
+	
+	/**
+	 * Calculates the estimate of the fraction
+	 * @return A double approximation of the fraction
+	 */
+	public double getValue(){
+		double tNum = numerator;
+		double tDen = numerator;
+		return tNum/tDen;	
+	}
 }
