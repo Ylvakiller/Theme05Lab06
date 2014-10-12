@@ -80,12 +80,12 @@ public class Tester {
 		System.out.println("I will let you enter 6 votes for both the president and the vice president:");
 		
 		int i =0;
-		while(i<2){
+		/*while(i<2){
 			VoteRecorder voter = new VoteRecorder();
 			voter.getAndConfirmVotes();
 			i++;
 		}
-		
+		*/
 		printVotes();
 		System.out.println("Now I won't let you sit here the whole day entering votes, I created a backway to simulate votes.");
 		System.out.println("I am going to use this backway to simulate 10 000 votes for you.");
@@ -101,7 +101,15 @@ public class Tester {
 		VoteRecorder randomVote = new VoteRecorder(randomPresident,randomVicePresident);
 		System.out.println("Checking what the votes are:");
 		printVotes();
-		
+		System.out.println("I will now simulate 10 000 votes.");
+		i=0;
+		while(i<10000){
+			randomPresident = rand.nextInt(2)+1;
+			randomVicePresident = rand.nextInt(2)+1;
+			VoteRecorder simulatedVote = new VoteRecorder(randomPresident,randomVicePresident);
+			i++;
+		}
+		printVotes();
 		
 	}
 
