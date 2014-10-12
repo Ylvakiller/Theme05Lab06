@@ -23,13 +23,22 @@ public class RationalNumbers {
 	}
 	
 	/**
+	 * Simplifies the stored numerator and denominator
+	 */
+	private void simplify(){
+		int gcd = getGCD(numerator,denominator);
+		numerator = numerator/gcd;
+		denominator = denominator/gcd;
+	}
+	
+	/**
 	 * Calculates the greatest common divisor of the inputs.
 	 * Note that the inputs should be non zero integers
 	 * @param numerator Used in the calculations as a numerator
 	 * @param denominator Used in the calculations as a denominator
 	 * @return an int that is the greatest common divisor
 	 */
-	public int getGCD(int numerator, int denominator){
+	private int getGCD(int numerator, int denominator){
 		BigInteger tempNumerator =BigInteger.valueOf(numerator);
 		BigInteger tempDenominator =BigInteger.valueOf(denominator);
 		BigInteger tempGCD = tempNumerator.gcd(tempDenominator);
