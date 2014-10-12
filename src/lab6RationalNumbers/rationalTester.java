@@ -14,9 +14,10 @@ package lab6RationalNumbers;
  * • A set method that sets the numerator and denominator. 
  * • simplify—a private method that converts the rational number to simplified form. 
  * • getGCD(x, y)—a private static method that returns the largest common factor of the two positive integers x and y, that is, their greatest common divisor. 
- * For example, the greatest common divisor of 40 and 12 is 4. 
+ *   For example, the greatest common divisor of 40 and 12 is 4. 
  * • getValue—returns the rational number as a double value. 
  * • toString—returns the rational number as a string in the form a/b. 
+ * 
  * Write a test program that tests each method.
  * In addition allow the user to choose the numerator and denominator. 
  * To avoid your program from crashing when the user does not type an integer for the numerator or denominator, 
