@@ -68,6 +68,9 @@ public class VoteRecorder {
 	 */
 	private static BigInteger voters = BigInteger.ZERO;
 	
+	/**
+	 * Used to get user input from the keyboard
+	 */
 	private static Scanner keyboard;
 
 	/**
@@ -432,7 +435,14 @@ public class VoteRecorder {
 		}
 	}
 	
-	
+	/**
+	 * Closes the Scanner that is used to get keyboard input.
+	 * Closes the whole program using a System exit with code 0
+	 */
+	private static void close(){
+		keyboard.close();
+		System.exit(0);
+	}
 
 
 
