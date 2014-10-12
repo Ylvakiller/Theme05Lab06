@@ -72,15 +72,7 @@ public class Tester {
 		if(!VoteRecorder.setCandidatesVicePresident("John McCain", "Susan Bush")){
 			System.err.println("Whoops programming error :O");
 		}
-		System.out.println("Checking what the vote counts of all presidential candidates are:");
-		System.out.println("There are a total of " + VoteRecorder.getCurrentVotePresident().substring(0, VoteRecorder.getCurrentVotePresident().indexOf(",")) + " votes cast for the first presidential candidate which is named " + VoteRecorder.getNameCandidatePresident1() + ".");
-		System.out.println("There are a total of " + VoteRecorder.getCurrentVotePresident().substring(VoteRecorder.getCurrentVotePresident().indexOf(",")+1) + " votes cast for the second presidential candidate which is named " + VoteRecorder.getNameCandidatePresident2() + ".");
-		
-		System.out.println();
-		System.out.println("Now checking the vice president:");
-		System.out.println("Up till now the candidate for vice president " + VoteRecorder.getNameCandidateVicePresident1() + " has gotten " + VoteRecorder.getCurrentVoteVicePresident().substring(0, VoteRecorder.getCurrentVoteVicePresident().indexOf(",")) + " votes.");
-		System.out.println("Up till now the candidate for vice president " + VoteRecorder.getNameCandidateVicePresident2() + " has gotten " + VoteRecorder.getCurrentVoteVicePresident().substring(VoteRecorder.getCurrentVoteVicePresident().indexOf(",")+1) + " votes.");
-		System.out.println();
+		printVotes();
 		System.out.println("Seems that the program so far runs okay.");
 		System.out.println("We checked if we can enter names and if the amount of votes start at the correct number.");
 		System.out.println("Time to do some voting");
@@ -94,30 +86,14 @@ public class Tester {
 			i++;
 		}
 		
-		System.out.println();
-		System.out.println("Checking what the vote counts of all presidential candidates are:");
-		System.out.println("There are a total of " + VoteRecorder.getCurrentVotePresident().substring(0, VoteRecorder.getCurrentVotePresident().indexOf(",")) + " votes cast for the first presidential candidate which is named " + VoteRecorder.getNameCandidatePresident1() + ".");
-		System.out.println("There are a total of " + VoteRecorder.getCurrentVotePresident().substring(VoteRecorder.getCurrentVotePresident().indexOf(",")+1) + " votes cast for the second presidential candidate which is named " + VoteRecorder.getNameCandidatePresident2() + ".");
-		
-		System.out.println();
-		System.out.println("Now checking the vice president:");
-		System.out.println("Up till now the candidate for vice president " + VoteRecorder.getNameCandidateVicePresident1() + " has gotten " + VoteRecorder.getCurrentVoteVicePresident().substring(0, VoteRecorder.getCurrentVoteVicePresident().indexOf(",")) + " votes.");
-		System.out.println("Up till now the candidate for vice president " + VoteRecorder.getNameCandidateVicePresident2() + " has gotten " + VoteRecorder.getCurrentVoteVicePresident().substring(VoteRecorder.getCurrentVoteVicePresident().indexOf(",")+1) + " votes.");
-		System.out.println();
-		System.out.println("Now I won't let you sit here the whole day entering votes, I created a backway to simulate votes");
+		printVotes();
+		System.out.println("Now I won't let you sit here the whole day entering votes, I created a backway to simulate votes.");
 		System.out.println("I am going to use this backway to simulate 10 000 votes for you.");
 		System.out.println("This backway will work using a random number generator.");
 		System.out.println("But let me start with reseting the vote count.");
 		VoteRecorder.resetVotes();
 		System.out.println("We can check if this method works, the following next lines should all tell us that there are 0 votes for all candidates:");
-		System.out.println("Checking what the vote counts of all presidential candidates are:");
-		System.out.println("There are a total of " + VoteRecorder.getCurrentVotePresident().substring(0, VoteRecorder.getCurrentVotePresident().indexOf(",")) + " votes cast for the first presidential candidate which is named " + VoteRecorder.getNameCandidatePresident1() + ".");
-		System.out.println("There are a total of " + VoteRecorder.getCurrentVotePresident().substring(VoteRecorder.getCurrentVotePresident().indexOf(",")+1) + " votes cast for the second presidential candidate which is named " + VoteRecorder.getNameCandidatePresident2() + ".");
-		
-		System.out.println();
-		System.out.println("Now checking the vice president:");
-		System.out.println("Up till now the candidate for vice president " + VoteRecorder.getNameCandidateVicePresident1() + " has gotten " + VoteRecorder.getCurrentVoteVicePresident().substring(0, VoteRecorder.getCurrentVoteVicePresident().indexOf(",")) + " votes.");
-		System.out.println("Up till now the candidate for vice president " + VoteRecorder.getNameCandidateVicePresident2() + " has gotten " + VoteRecorder.getCurrentVoteVicePresident().substring(VoteRecorder.getCurrentVoteVicePresident().indexOf(",")+1) + " votes.");
+		printVotes();
 		System.out.println("So resetting also works, now let me try simulating 1 vote:");
 		Random rand = new Random();
 		int randomPresident = rand.nextInt(2)+1;	//the nextInt is normally exclusive of the top value, so giving it 2 as a input will generate either a 0 or a 1, adding 1 to this and we have our vote
