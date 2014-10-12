@@ -113,7 +113,7 @@ public class Tester {
 		System.out.println("As you can see, using a random number generator is not the most accurate way to simulate an election.");
 		System.out.println("This because there is a 50 50 change for each president to get a vote," + System.lineSeparator() + "If I would let this program simulate 1 000 000 000 000 votes we would still only see a minute difference.");
 		System.out.println("But it'll do for testing the VoteRecorder class." + System.lineSeparator());
-		
+		System.out.println("test");
 	}
 
 	/**
