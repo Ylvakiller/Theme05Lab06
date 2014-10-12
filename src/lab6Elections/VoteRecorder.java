@@ -132,7 +132,6 @@ public class VoteRecorder {
 	public static String getNameCandidatePresident1() {
 		return nameCandidatePresident1;
 	}
-	
 	/**
 	 * Getter method for the name of the second presidential candidate
 	 * @return a string with the name of the second presidential candidate
@@ -141,7 +140,6 @@ public class VoteRecorder {
 	public static String getNameCandidatePresident2() {
 		return nameCandidatePresident2;
 	}
-	
 	/**
 	 * Getter method to retrieve the name of the first candidate for vice president
 	 * @return a string the name of the second candidate for vice president
@@ -150,7 +148,6 @@ public class VoteRecorder {
 	public static String getNameCandidateVicePresident1() {
 		return nameCandidateVicePresident1;
 	}
-	
 	/**
 	 * Getter method to retrieve the name of the second candidate for vice president
 	 * @return a string the name of the second candidate for vice president
@@ -159,6 +156,7 @@ public class VoteRecorder {
 	public static String getNameCandidateVicePresident2() {
 		return nameCandidateVicePresident2;
 	}
+	
 
 	/**
 	 * Only works if the amount of votes for the president is equal to 0
@@ -299,7 +297,7 @@ public class VoteRecorder {
 		boolean temb = true;
 		String temp = getVotes();
 		String sub1 = temp.substring(0, temp.indexOf(","));
-		String sub2 = temp.substring(temp.indexOf(","));
+		String sub2 = temp.substring(temp.indexOf(",")+1);
 		while(temb){
 
 			if(confirmVotes(Integer.valueOf(sub1), Integer.valueOf(sub2))){
@@ -334,19 +332,15 @@ public class VoteRecorder {
 		int temp=0;
 		boolean tempB = true;
 		System.out.println("Please enter your vote now:");
+		temp = keyboard.nextInt();
 		while(tempB){
-
-			temp = keyboard.nextInt();
 			if (temp==1||temp==2||temp==0){
 				tempB=false;
-				keyboard.close();
-
 			}else{
 				System.err.println("Invalid input, please enter your vote again");
+				temp = keyboard.nextInt();
 			}
 		}
-
-		keyboard.close();
 		return temp;
 
 
@@ -358,6 +352,7 @@ public class VoteRecorder {
 	 */
 	private static String getVotes(){
 		int votePresident=getAVote(nameCandidatePresident1,nameCandidatePresident2);
+		//int votePresident = 0;
 		int voteVicePresident = getAVote(nameCandidateVicePresident1,nameCandidateVicePresident2);
 		return Integer.toString(votePresident) + "," + Integer.toString(voteVicePresident);
 	}
@@ -379,7 +374,7 @@ public class VoteRecorder {
 			}else{
 				System.out.print(nameCandidatePresident2);
 			}
-			System.out.println(" as President");
+			System.out.println(" as president");
 		}
 		if(vicePresident==0){
 			System.out.println("You have also entered that you do not mind who the vice president is");
@@ -390,25 +385,28 @@ public class VoteRecorder {
 			}else{
 				System.out.print(nameCandidateVicePresident2);
 			}
-			System.out.println(" as Vice President.");
+			System.out.println(" as vice president.");
 		}
+		System.out.println();
 		System.out.println("If you still agree with these votes please say yes, otherwise say no.");
 		String temp = "";
 		boolean tempB=true;
 
 		while(tempB){
+			@SuppressWarnings("resource")
 			Scanner keyboard = new Scanner(System.in);
 			temp = keyboard.next();
 			if (temp.equalsIgnoreCase("yes")){
 				confirmed = true;
 				tempB=false;
+				System.out.println("Confirmed, saving vote");
 			}else if(temp.equalsIgnoreCase("no")){
 				confirmed = false;
 				tempB=false;
+				System.out.println("Unconfirmed, please re enter your vote");
 			}else{
 				System.out.println("I could not understand what you entered, can you please enter it again?");
 			}
-			keyboard.close();
 		}		
 		return confirmed;
 	}
