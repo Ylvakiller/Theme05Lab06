@@ -77,15 +77,14 @@ public class Tester {
 		System.out.println("We checked if we can enter names and if the amount of votes start at the correct number.");
 		System.out.println("Time to do some voting");
 		System.out.println("We will start with doing some manual voting, this is the kind of voting that should happen during elections.");
-		System.out.println("I will let you enter 6 votes for both the president and the vice president:");
+		System.out.println("I will let you enter 10 votes for both the president and the vice president:");
 		
 		int i =0;
-		/*while(i<2){
+		while(i<10){
 			VoteRecorder voter = new VoteRecorder();
 			voter.getAndConfirmVotes();
 			i++;
 		}
-		*/
 		printVotes();
 		System.out.println("Now I won't let you sit here the whole day entering votes, I created a backway to simulate votes.");
 		System.out.println("I am going to use this backway to simulate 10 000 votes for you.");
