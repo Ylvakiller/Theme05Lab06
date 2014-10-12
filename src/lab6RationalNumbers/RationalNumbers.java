@@ -52,6 +52,10 @@ public class RationalNumbers {
 		simplify();
 	}
 
+	/**
+	 * Gets the denominator
+	 * @return The Currently stored denominator
+	 */
 	public int getDenominator() {
 		return denominator;
 	}
