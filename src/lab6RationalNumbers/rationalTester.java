@@ -26,7 +26,8 @@ package lab6RationalNumbers;
  */
 public class rationalTester {
 	public static void main(String[] args) {
-		
+		RationalNumbers test = new RationalNumbers();
+		System.out.println(test.getGCD(10, 5));
 	}
 
 }
