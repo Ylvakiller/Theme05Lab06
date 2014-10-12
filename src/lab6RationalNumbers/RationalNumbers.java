@@ -44,4 +44,13 @@ public class RationalNumbers {
 		BigInteger tempGCD = tempNumerator.gcd(tempDenominator);
 		return tempGCD.intValue();
 	}
+	
+	/**
+	 * Returns the fraction in a string format
+	 * @return The format is numerator/denominator
+	 */
+	public String toString(){
+		String temp = String.valueOf(numerator) + "/" + String.valueOf(denominator);
+		return temp;
+	}
 }
