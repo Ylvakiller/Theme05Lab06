@@ -113,6 +113,14 @@ public class Tester {
 		System.out.println("As you can see, using a random number generator is not the most accurate way to simulate an election.");
 		System.out.println("This because there is a 50 50 change for each president to get a vote," + System.lineSeparator() + "If I would let this program simulate 1 000 000 000 000 votes we would still only see a minute difference.");
 		System.out.println("But it'll do for testing the VoteRecorder class." + System.lineSeparator());
+		System.out.println("Now lets see if we can change the names of the candidates...");
+		if(!VoteRecorder.setCandidatesPresident("Thies Keulen", "Chris Mosterd")){
+			System.out.println("Aww we cannot change the names for presidents during an election :(");
+		}
+		System.out.println("Lets try vice president?");
+		if(!VoteRecorder.setCandidatesVicePresident("Thies Keulen", "Chris Mosterd")){
+			System.out.println("Nope, even vice president wont do the trick");
+		}
 	}
 
 	/**
