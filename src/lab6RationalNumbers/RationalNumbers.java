@@ -8,12 +8,12 @@ public class RationalNumbers {
 	 * The numerator is the number before the / sign
 	 */
 	private int numerator;
-	
+
 	/**
 	 * The denominator is the number after the / sign
 	 */
 	private int denominator;
-	
+
 	/**
 	 * Default constructor, sets the rational number to 0/1
 	 */
@@ -21,7 +21,7 @@ public class RationalNumbers {
 		numerator =0;
 		denominator = 1;
 	}
-	
+
 	/**
 	 * Constructor that takes as input a numerator and denominator
 	 * @param numerator The numerator to store
@@ -32,16 +32,41 @@ public class RationalNumbers {
 		this.denominator =denominator;
 		simplify();
 	}
-	
+
+	/**
+	 * Gets the numerator
+	 * @return The currently stored numerator
+	 */
+	public int getNumerator() {
+		return numerator;
+	}
+
+	/**
+	 * Sets the numerator and denominator and simplifies them
+	 * @param numerator The numerator to store
+	 * @param denominator The denominator to store, cannot be 0
+	 */
+	public void setNumerator(int numerator, int denominator) {
+		this.numerator = numerator;
+		this.denominator =denominator;
+		simplify();
+	}
+
+	public int getDenominator() {
+		return denominator;
+	}
+
 	/**
 	 * Simplifies the stored numerator and denominator
 	 */
 	private void simplify(){
 		int gcd = getGCD(numerator,denominator);
-		numerator = numerator/gcd;
-		denominator = denominator/gcd;
+		if(gcd!=0){
+			numerator = numerator/gcd;
+			denominator = denominator/gcd;
+		}
 	}
-	
+
 	/**
 	 * Calculates the greatest common divisor of the inputs.
 	 * Note that the inputs should be non zero integers
@@ -55,7 +80,7 @@ public class RationalNumbers {
 		BigInteger tempGCD = tempNumerator.gcd(tempDenominator);
 		return tempGCD.intValue();
 	}
-	
+
 	/**
 	 * Returns the fraction in a string format
 	 * @return The format is numerator/denominator
@@ -64,7 +89,7 @@ public class RationalNumbers {
 		String temp = String.valueOf(numerator) + "/" + String.valueOf(denominator);
 		return temp;
 	}
-	
+
 	/**
 	 * Calculates the estimate of the fraction
 	 * @return A double approximation of the fraction
