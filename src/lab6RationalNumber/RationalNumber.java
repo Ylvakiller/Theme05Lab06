@@ -1,8 +1,8 @@
-package lab6RationalNumbers;
+package lab6RationalNumber;
 
 import java.math.BigInteger;
 
-public class RationalNumbers {
+public class RationalNumber {
 
 	/**
 	 * The numerator is the number before the / sign
@@ -17,7 +17,7 @@ public class RationalNumbers {
 	/**
 	 * Default constructor, sets the rational number to 0/1
 	 */
-	public RationalNumbers(){
+	public RationalNumber(){
 		numerator =0;
 		denominator = 1;
 	}
@@ -27,7 +27,7 @@ public class RationalNumbers {
 	 * @param numerator The numerator to store
 	 * @param denominator The denominator to store, cannot be 0
 	 */
-	public RationalNumbers(int numerator, int denominator){
+	public RationalNumber(int numerator, int denominator){
 		this.numerator =numerator;
 		this.denominator =denominator;
 		simplify();

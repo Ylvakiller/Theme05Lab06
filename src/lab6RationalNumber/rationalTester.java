@@ -1,4 +1,4 @@
-package lab6RationalNumbers;
+package lab6RationalNumber;
 
 /*
  * Definition as found on blackboard:
@@ -26,7 +26,8 @@ package lab6RationalNumbers;
  */
 public class rationalTester {
 	public static void main(String[] args) {
-	
+		System.out.println("Its testing time :)");
+		RationalNumber test = new RationalNumber();
 	}
 
 }
