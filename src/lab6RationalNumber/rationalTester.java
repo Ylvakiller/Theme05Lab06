@@ -28,6 +28,20 @@ public class rationalTester {
 	public static void main(String[] args) {
 		System.out.println("Its testing time :)");
 		RationalNumber test = new RationalNumber();
+		System.out.println("Let us see what is stored right at the beginning:");
+		System.out.println(test.toString());
+		System.out.println("Whop that is what we expect\n");
+		System.out.println("Now lets give it some variables... lets try 40 and 12");
+		test.setRatio(40, 12);
+		System.out.println("Now what is stored?");
+		System.out.println(test.toString());
+		System.out.println("Hey this is not what we put in...");
+		System.out.println("Or is it? we need to think about this...");
+		System.out.println("Okay 40 became 10... that means it was devided by 4...");
+		System.out.println("And if I would devide 12 by 4 that would get me 3, what was it that was stored already?");
+		System.out.println(test.toString());
+		System.out.println("Aaaah so it does work, it just simplifies it directly");
+		
 	}
 
 }
