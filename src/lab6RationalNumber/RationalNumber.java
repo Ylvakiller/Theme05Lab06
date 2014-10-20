@@ -100,7 +100,7 @@ public class RationalNumber {
 	 */
 	public double getValue(){
 		double tNum = numerator;
-		double tDen = numerator;
-		return tNum/tDen;	
+		double tDen = denominator;
+		return tNum/tDen;
 	}
 }
